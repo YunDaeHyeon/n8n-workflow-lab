@@ -1,3 +1,7 @@
 # SSH 키
 *.pem
 resources/*.pem
+
+# 환경변수
+*.env
+resources/*.env
