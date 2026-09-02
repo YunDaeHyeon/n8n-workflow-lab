@@ -1,0 +1,3 @@
+# SSH 키
+*.pem
+resources/*.pem
