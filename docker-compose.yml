@@ -35,6 +35,7 @@ services:
       N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
       GENERIC_TIMEZONE: ${GENERIC_TIMEZONE}
       TZ: ${TZ}
+      N8N_SECURE_COOKIE: "false" # 임시 우회 설정 (HTTP) TODO : HTTPS 연결 시 true로 변경 또는 삭제할 것
     volumes:
       - n8n-data:/home/node/.n8n
     depends_on:
