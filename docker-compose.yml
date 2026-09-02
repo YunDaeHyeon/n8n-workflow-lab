@@ -21,7 +21,7 @@ services:
     container_name: n8n
     restart: unless-stopped
     ports:
-      - "5678:5678"
+      - "127.0.0.1:5678:5678" # 포트를 localhost로 제한, nginx가 이를 중개
     environment:
       DB_TYPE: postgresdb
       DB_POSTGRESDB_HOST: postgres
@@ -35,7 +35,6 @@ services:
       N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
       GENERIC_TIMEZONE: ${GENERIC_TIMEZONE}
       TZ: ${TZ}
-      N8N_SECURE_COOKIE: "false" # 임시 우회 설정 (HTTP) TODO : HTTPS 연결 시 true로 변경 또는 삭제할 것
       N8N_HOST: ${N8N_HOST} # TODO : 도메인 연결 시 IP -> 도메인으로 변경
       N8N_PORT: ${N8N_PORT}
       N8N_PROTOCOL: ${N8N_PROTOCOL} # TODO : HTTPS 연결 시 https로 변경
